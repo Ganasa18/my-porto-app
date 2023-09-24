@@ -1,0 +1,34 @@
+.about__card {
+    background: var(--color-bg-variant);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+
+}
+
+.about__card:hover {
+    background: var(--color-transparent);
+    border-color: var(--color-bg-variant);
+    cursor: default;
+}
+
+.about__icon {
+    color: var(--color-light-blue);
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.about__card h5 {
+    font-size: 1.1rem;
+}
+
+.about__card small {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.6);
+}

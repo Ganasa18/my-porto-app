@@ -1,0 +1,64 @@
+nav {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: max-content;
+    display: block;
+    padding: 0.7rem 1.7rem;
+    z-index: 2;
+    position: fixed;
+    bottom:1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.8rem; 
+    border-radius:  3rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border: 1px solid rgba(79, 75, 75, 0.2);
+
+}
+
+nav a{
+    background: transparent;
+    padding: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+nav a.active{
+    background: var(--color-dark-blue);
+    color: #fff;
+
+}
+
+nav a:hover{
+    background: radial-gradient(circle, rgba(0, 0,0,0.5) 0.2em, transparent 0.25em) 0 0 / 1.25em 1.25em
+      , radial-gradient(circle, rgba(0, 0,0,0.5) 0.2em, transparent 0.25em) 6.25em 6.25em / 1.25em 1.25em;
+    animation: halftone 1s forwards;
+}
+
+
+
+/*============= Media Query Medium Devices =============*/
+@media screen and (max-width: 1024px){
+
+  
+}
+    
+  /*============= Media Query Small Devices =============*/
+@media screen and (max-width: 600px){
+    nav {
+        border-radius:  1rem;
+    }
+}
+
+
+/* ========= Animation Keyframes ========= */
+
+@keyframes halftone {
+    100% {
+      background-size: 2.375em 2.375em, 0.1em 0.1em;
+    }
+}

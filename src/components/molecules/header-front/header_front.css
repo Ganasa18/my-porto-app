@@ -1,0 +1,60 @@
+.typing__text{
+    position: relative;
+    left: calc(50% - 12rem);
+    border-right: .12rem solid orange;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 5s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+.me{
+    background: linear-gradient(var(--color-light-blue), transparent); 
+    width: 22rem;
+    height: 30rem;
+    position: absolute;
+    left: calc(50% - 11rem);
+    margin-top: 4rem;
+    border-radius: 12rem 12rem 0 0;
+    overflow: hidden;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+
+
+
+@keyframes typewriter{
+    from{
+        width: 0;
+        color: $colorTransparent;
+    }
+    to{
+        width: 24rem;
+        color:$colorWhite;
+    }
+}
+@keyframes blinkTextCursor{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+}
+
+
+@keyframes animate-fade {
+    0% {
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+      }
+    
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+  /*============= Media Query Small Devices =============*/
+  @media screen and (max-width: 600px){
+    .typing__text{
+        animation: typewriter 5s steps(10) 1s 1 normal both,
+        blinkTextCursor 500ms steps(10) infinite normal;
+    }
+}
