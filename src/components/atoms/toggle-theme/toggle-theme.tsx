@@ -32,7 +32,7 @@ const ToggleThemeFront = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.4 }}
-              className="absolute top-[-11.5rem] sm:top-0 right-0 z-10 w-32 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg">
+              className="absolute lg:top-[2.1rem] sm:top-0 right-0 z-10 w-32 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg">
               <div className="p-2 space-y-4">
                 <div
                   onClick={() => handleTheme("light")}

@@ -3,9 +3,9 @@ import { ActionPayloadGlobal, ActionTypes } from "@/interface/interface-store";
 import { useStore } from "@/store/use-store/use-store";
 import { useEffect } from "react";
 import HeaderFront from "../components/molecules/header-front/header_front";
-import "./globals.css";
 import LayoutePage from "./layout-page";
 import { actionGetAllProject } from "@/store/action/portofolio-action";
+import LoadingScreen from "@/components/molecules/loading-front/loading-front";
 
 export default function Home() {
   const [state, dispatch] = useStore();
@@ -26,19 +26,6 @@ export default function Home() {
   }, []);
 
   return <>{isLoading ? <LoadingScreen /> : <MainContent />}</>;
-}
-
-function LoadingScreen() {
-  return (
-    <>
-      <section className="relative flex h-screen items-center bg-black justify-center">
-        <h2 className="text-white sm:text-[11rem] md:text-[12rem] cursor-default">
-          Loading...
-        </h2>
-        <div className="light"></div>
-      </section>
-    </>
-  );
 }
 
 function MainContent() {

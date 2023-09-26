@@ -14,8 +14,8 @@ const HeaderFront = () => {
         <ToggleThemeFront />
         <h5 className="font-medium text-sm text-white pb-4">Hello I`m</h5>
 
-        <div className="typing__text text-2xl md:text-5xl text-light-blue dark:text-white font-bold">
-          {userData.fullName}
+        <div className="inline-block  md:text-5xl text-light-blue dark:text-white font-bold">
+          <p className="typing__text text-2xl">{userData.fullName}</p>
         </div>
         <h5 className="text-slate-300 font-bold py-5 text-sm">
           Fullstack Developer

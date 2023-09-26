@@ -33,6 +33,8 @@ const FrontExperience = () => {
           );
         })}
       </div>
+      <br />
+      <br />
     </section>
   );
 };

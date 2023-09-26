@@ -92,20 +92,20 @@ const FrontPortofolio = () => {
               transition={{ duration: 0.3, delay: index * 0.1 }}
               className="h-auto bg-black bg-opacity-50 rounded-lg shadow-md px-8 py-10">
               <div className="flex flex-col space-y-6">
-                <div className="grid md:grid-col-1 lg:grid-cols-2 gap-10">
+                <div className="w-full">
                   <div className="pb-6 hover:cursor-pointer group ">
                     <Image
-                      height={viewState == "Grid" ? 500 : 200}
-                      width={viewState == "Grid" ? 500 : 400}
+                      height={viewState == "Grid" ? 400 : 200}
+                      width={viewState == "Grid" ? 400 : 400}
                       src={item.image!}
                       alt="project"
                       objectFit="cover"
                       className="rounded-md transition-opacity duration-300 ease-in-out group-hover:opacity-80"
                     />
                   </div>
-                  <div className="sm:line-clamp-3 md:line-clamp-3 lg:line-clamp-6">
+                  {/* <div className="sm:line-clamp-3 md:line-clamp-3 lg:line-clamp-6">
                     <p className="font-normal ">{item.description}</p>
-                  </div>
+                  </div> */}
                 </div>
                 <h3 className="font-bold">{item.title}</h3>
                 <h3 className="font-bold">Stacks :</h3>
