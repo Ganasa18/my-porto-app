@@ -22,10 +22,13 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
+      - name: Set non-interactive environment for Vercel
+        run: export VERCEL_INTERACTIVE=0
+
       - name: Deploy to Vercel
         run: |
-          npm install # Install project dependencies
-          npm run build # Replace with your build script if necessary
+          npm install
+          npm run build
           vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
         env:
           NEXT_TELEMETRY_DISABLED: 1

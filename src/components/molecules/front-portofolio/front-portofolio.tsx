@@ -65,7 +65,7 @@ const FrontPortofolio = () => {
   }, []);
 
   return (
-    <section className="mt-20">
+    <section className="mt-20 mb-16">
       <HeaderCompTitle title="My Recent Work" subtitle="Portofolio" />
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}

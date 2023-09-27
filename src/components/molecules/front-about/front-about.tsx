@@ -36,7 +36,7 @@ const FrontAbout = () => {
   ];
 
   return (
-    <section id="about" className="mt-20">
+    <section id="about" className="mt-20 pb-20">
       <HeaderCompTitle title="Get To Know" subtitle="About Me" />
       <div className="about__container mt-20">
         <div className="about__me">

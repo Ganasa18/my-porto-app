@@ -6,7 +6,6 @@ const PagePortoFolio = () => {
   return (
     <LayoutePage>
       <FrontPortofolio />
-      <br />
     </LayoutePage>
   );
 };
