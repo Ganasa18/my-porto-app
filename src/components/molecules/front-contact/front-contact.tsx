@@ -2,30 +2,50 @@
 import Button from "@/components/atoms/button/button";
 import HeaderCompTitle from "@/components/atoms/header-title-comp/header-title-comp";
 import { useDebounce } from "@/hook/use-debounce";
+import useForm from "@/hook/use-form";
 import { formDataContactMe } from "@/interface/interface-form";
 import React, { useState } from "react";
 
 const FrontContactMe = () => {
-  const [formData, setFormData] = useState<formDataContactMe>({
+  const [formData, setFormData] = useForm({
     email: "",
     subject: "",
     message: "",
   });
 
-  const handleSubmitContactMe = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmitContactMe = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
     event.preventDefault();
-    console.log(formData);
-    setFormData({
-      email: "",
-      subject: "",
-      message: "",
-    });
-    console.log(formData);
-  };
 
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    let formBody = {
+      email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+    console.log(formBody);
+
+    try {
+      const response = await fetch("/api/v1/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formBody),
+      });
+
+      if (response.ok) {
+        alert("Email sent successfully");
+        setTimeout(() => {
+          setFormData("reset");
+          console.log(formData);
+        }, 500);
+      } else {
+        alert("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -46,11 +66,11 @@ const FrontContactMe = () => {
               </label>
               <input
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(event) => setFormData("email", event?.target.value)}
                 type="email"
                 id="email"
                 className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-                placeholder="name@flowbite.com"
+                placeholder="name@gmail.com"
               />
             </div>
             <div>
@@ -61,9 +81,10 @@ const FrontContactMe = () => {
               </label>
               <input
                 value={formData.subject}
-                onChange={handleChange}
+                onChange={(event) =>
+                  setFormData("subject", event?.target.value)
+                }
                 type="text"
-                id="subject"
                 className="block p-3 w-full text-sm text-white bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
                 placeholder="Let us know how we can help you"
               />
@@ -76,13 +97,14 @@ const FrontContactMe = () => {
               </label>
               <textarea
                 value={formData.message}
-                onChange={handleChange}
-                id="message"
+                onChange={(event) =>
+                  setFormData("message", event?.target.value)
+                }
                 rows={6}
                 className="block p-2.5 w-full text-sm text-white bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 placeholder="Leave a comment..."></textarea>
             </div>
-            <Button onClick={() => {}} variant={"default"}>
+            <Button type="submit" variant={"default"}>
               Send Message
             </Button>
           </form>

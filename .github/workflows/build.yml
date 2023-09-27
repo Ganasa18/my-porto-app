@@ -29,7 +29,7 @@ jobs:
         run: |
           npm install
           npm run build
-          vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+          vercel --token ${{ secrets.VERCEL_TOKEN }} --confirm  --prod
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
