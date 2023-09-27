@@ -23,6 +23,14 @@ jobs:
         run: npm install -g vercel
 
       - name: Deploy to Vercel
-        run: vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+        run: |
+          npm install # Install project dependencies
+          npm run build # Replace with your build script if necessary
+          vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+
+      - name: Check deployment status
+        run: vercel ls --token ${{ secrets.VERCEL_TOKEN }} --scope <ganasa18>
 
       - run: echo "🍏 This job's status is ${{ job.status }}."

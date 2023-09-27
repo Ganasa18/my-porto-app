@@ -19,6 +19,8 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        circularLight:
+          "repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #3b4d6b 5px, #1e293b 100px)",
       },
       colors: { ...colors, "dark-blue": "#2a4878", "light-blue": "#4db5ff" },
     },

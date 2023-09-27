@@ -1,3 +1,4 @@
+"use client";
 import { userData } from "@/assets/static";
 import Image from "next/image";
 import { AiOutlineFileDone } from "react-icons/ai";
@@ -7,6 +8,7 @@ import Me from "../../../assets/me-about.jpg";
 import FrontCardAbout from "../../atoms/front-card-about/front-card-about";
 import HeaderCompTitle from "../../atoms/header-title-comp/header-title-comp";
 import "./front-about.css";
+import { motion } from "framer-motion";
 
 const FrontAbout = () => {
   const ListCard = [
@@ -45,10 +47,11 @@ const FrontAbout = () => {
 
         <div className="text-slate-300 space-y-5 mt-10 md:py-10 sm:py-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6 px-5">
-            {ListCard.map((item) => {
+            {ListCard.map((item, index) => {
               return (
                 <FrontCardAbout
                   key={item.id}
+                  index={index}
                   title={item.title}
                   content={item.content}
                   icon={item.icon}
@@ -56,11 +59,15 @@ const FrontAbout = () => {
               );
             })}
           </div>
-          <p className="px-6 text-md py-5">
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="px-6 text-md py-5">
             Perkenalkan nama saya{" "}
             <span className="font-bold text-white">{userData.fullName}</span>,
             {userData.myInfo}
-          </p>
+          </motion.p>
         </div>
       </div>
     </section>

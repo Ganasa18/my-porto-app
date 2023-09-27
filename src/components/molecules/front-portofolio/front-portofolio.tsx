@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ListPortfolio } from "@/assets/static";
 import Button from "../../atoms/button/button";
 import { useStore } from "@/store/use-store/use-store";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 import {
   ActionPayloadPortofolio,
@@ -16,6 +16,7 @@ import { actionGetAllProject } from "@/store/action/portofolio-action";
 import { ResponseBodyProjectInterface } from "@/interface/interface-project";
 import Tooltip from "@/components/atoms/tooltip-comp/tooltip-comp";
 import { STACKS } from "@/components/atoms/stacks-comp/stacks-comp";
+import AnimatedText from "@/components/atoms/animated-text/animated-text";
 
 const FrontPortofolio = () => {
   const [state, dispatch] = useStore();
@@ -66,14 +67,6 @@ const FrontPortofolio = () => {
   return (
     <section className="mt-20">
       <HeaderCompTitle title="My Recent Work" subtitle="Portofolio" />
-      <div className="flex px-5 gap-5 py-4 relative">
-        {/* <div>Sort By</div> */}
-        <PopFilterPortofolio
-          viewState={setHandlerView}
-          nameBtn={`View : ${viewState}`}
-          dataFilter={["Grid", "Column"]}
-        />
-      </div>
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
