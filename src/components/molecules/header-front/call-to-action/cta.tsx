@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
-import Button from "../../atoms/button/button";
+import React, { useEffect } from "react";
+import Button from "../../../atoms/button/button";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 const Cta = () => {
   const router = useRouter();
@@ -18,14 +19,17 @@ const Cta = () => {
   };
 
   return (
-    <div className="cta space-x-3 mt-2">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      className="cta space-x-3 mt-2">
       <Button onClick={() => downloadPdfFile()} variant={"default"}>
         Download CV
       </Button>
       <Button variant={"normal"} onClick={() => navigateContactMe()}>
         Contact Me
       </Button>
-    </div>
+    </motion.div>
   );
 };
 

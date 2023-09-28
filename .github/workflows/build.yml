@@ -34,6 +34,4 @@ jobs:
           NEXT_TELEMETRY_DISABLED: 1
 
       - name: Check deployment status
-        run: vercel ls --token ${{ secrets.VERCEL_TOKEN }} --scope <ganasa18>
-
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+        run: echo "🍏 This job's status is ${{ job.status }}."

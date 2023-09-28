@@ -1,22 +1,19 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import HeaderCompTitle from "../../atoms/header-title-comp/header-title-comp";
-import Image from "next/image";
-import { ListPortfolio } from "@/assets/static";
-import Button from "../../atoms/button/button";
 import { useStore } from "@/store/use-store/use-store";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import HeaderCompTitle from "../../atoms/header-title-comp/header-title-comp";
 
+import { STACKS } from "@/components/atoms/stacks-comp/stacks-comp";
+import Tooltip from "@/components/atoms/tooltip-comp/tooltip-comp";
+import { ResponseBodyProjectInterface } from "@/interface/interface-project";
 import {
   ActionPayloadPortofolio,
   ActionTypes,
-  PortofolioStateInterface,
 } from "@/interface/interface-store";
 import { actionGetAllProject } from "@/store/action/portofolio-action";
-import { ResponseBodyProjectInterface } from "@/interface/interface-project";
-import Tooltip from "@/components/atoms/tooltip-comp/tooltip-comp";
-import { STACKS } from "@/components/atoms/stacks-comp/stacks-comp";
-import AnimatedText from "@/components/atoms/animated-text/animated-text";
+import PaginatePortofolio from "./paginate-porto/paginate-porto";
 
 const FrontPortofolio = () => {
   const [state, dispatch] = useStore();
@@ -37,13 +34,13 @@ const FrontPortofolio = () => {
     setCurrentPage(pageNumber);
   };
 
-  const setHandlerView = (view: string) => {
-    setViewState(view);
-    typeDispatch({
-      type: ActionTypes.SET_POP_FILTER_PORTO,
-      action: !isFilterPop,
-    });
-  };
+  // const setHandlerView = (view: string) => {
+  //   setViewState(view);
+  //   typeDispatch({
+  //     type: ActionTypes.SET_POP_FILTER_PORTO,
+  //     action: !isFilterPop,
+  //   });
+  // };
 
   const previousPage = () => {
     if (currentPage !== 1) {
@@ -141,128 +138,3 @@ const FrontPortofolio = () => {
 };
 
 export default FrontPortofolio;
-
-interface PopFilterPortofolioProps {
-  nameBtn?: string;
-  dataFilter?: string[];
-  viewState: (view: string) => void;
-}
-
-export const PopFilterPortofolio: React.FC<PopFilterPortofolioProps> = ({
-  nameBtn = "Filter",
-  dataFilter,
-  viewState,
-}) => {
-  const [state, dispatch] = useStore();
-  const { isFilterPop }: PortofolioStateInterface = state.portofolioReducer;
-  type Dispatch = (action: ActionPayloadPortofolio) => void;
-  const typeDispatch: Dispatch = dispatch;
-
-  const handleFilterPop = () => {
-    typeDispatch({
-      type: ActionTypes.SET_POP_FILTER_PORTO,
-      action: !isFilterPop,
-    });
-  };
-
-  return (
-    <div className="absolute top-[-2.8rem] right-5">
-      <div className="inline-flex bg-white border rounded-md">
-        <div className="relative">
-          <Button
-            onClick={() => handleFilterPop()}
-            variant="default"
-            className="px-10 text-dark-blue">
-            {nameBtn}
-          </Button>
-          {isFilterPop && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="absolute right-0 z-10 w-32 mt-4 origin-top-right bg-white border border-gray-100 rounded-md shadow-lg">
-              <div className="p-2 space-y-4">
-                {dataFilter?.map((item, index) => {
-                  return (
-                    <div
-                      onClick={() => viewState(item)}
-                      key={index}
-                      className="flex items-center justify-between cursor-pointer p-2 space-x-4 text-sm text-gray-500 rounded-lg hover:bg-gray-50 hover:text-gray-700">
-                      <span>{item}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </motion.div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-interface PaginatePortofolioProps {
-  postsPerPage: number;
-  totalPosts: number;
-  currentPage: number;
-  paginate: (pageNumber: number) => void;
-  previousPage: () => void;
-  nextPage: () => void;
-}
-
-const PaginatePortofolio: React.FC<PaginatePortofolioProps> = ({
-  postsPerPage,
-  totalPosts,
-  currentPage,
-  paginate,
-  previousPage,
-  nextPage,
-}) => {
-  const pageNumbers = [];
-
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    pageNumbers.push(i);
-  }
-
-  return (
-    <div className="flex justify-center items-center py-10 space-x-5">
-      <button
-        disabled={currentPage === 1 ? true : false}
-        onClick={previousPage}
-        type="button"
-        className="bg-slate-200 text-dark-blue rounded-l-md border-r border-gray-100 py-2 hover:bg-dark-blue hover:text-white px-3">
-        <div className="flex flex-row align-middle">
-          <span className="ml-2">Prev</span>
-        </div>
-      </button>
-
-      <ul className="flex items-center space-x-2 font-light">
-        {pageNumbers.map((number) => (
-          <li
-            key={number}
-            className={`border ${
-              currentPage === number
-                ? " border-slate-900 bg-slate-800 dark:bg-dark-blue text-white"
-                : "border-gray-300 hover:bg-gray-200 hover:border-gray-200 bg-white text-gray-500"
-            } rounded-full   `}>
-            <span
-              onClick={() => paginate(number)}
-              className="w-8 h-8 flex items-center justify-center cursor-pointer">
-              {number}
-            </span>
-          </li>
-        ))}
-      </ul>
-
-      <button
-        onClick={nextPage}
-        type="button"
-        className="bg-slate-200 text-dark-blue rounded-r-md py-2 border-l border-gray-200 hover:bg-dark-blue hover:text-white px-3">
-        <div className="flex flex-row align-middle">
-          <span className="mr-2">Next</span>
-        </div>
-      </button>
-    </div>
-  );
-};
-
-export { PaginatePortofolio };

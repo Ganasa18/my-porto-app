@@ -5,7 +5,7 @@ import { AiOutlineFileDone } from "react-icons/ai";
 import { FaMobileAlt } from "react-icons/fa";
 import { MdOutlineWebAsset } from "react-icons/md";
 import Me from "../../../assets/me-about.jpg";
-import FrontCardAbout from "../../atoms/front-card-about/front-card-about";
+import FrontCardAbout from "./front-card-about/front-card-about";
 import HeaderCompTitle from "../../atoms/header-title-comp/header-title-comp";
 import "./front-about.css";
 import { motion } from "framer-motion";
@@ -45,7 +45,9 @@ const FrontAbout = () => {
           </div>
         </div>
 
-        <div className="text-slate-300 space-y-5 mt-10 md:py-10 sm:py-5">
+        <div
+          data-aos="fade"
+          className="text-slate-300 space-y-5 mt-10 md:py-10 sm:py-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6 px-5">
             {ListCard.map((item, index) => {
               return (

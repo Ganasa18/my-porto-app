@@ -49,10 +49,10 @@ const FrontContactMe = () => {
   };
 
   return (
-    <section className="mt-20">
+    <section className="mt-20 px-2">
       <HeaderCompTitle title="Get In Touch" subtitle="Contact Me" />
-      <section className="bg-black bg-opacity-50 dark:bg-gray-900">
-        <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <section className="bg-black bg-opacity-50 dark:bg-gray-900 rounded-md">
+        <div className="py-8 lg:py-16 px-6 mx-auto max-w-screen-md">
           <p className="mb-8 lg:mb-16 font-light text-center text-white dark:text-gray-400 sm:text-xl">
             Got a technical issue? Want to send feedback about a beta feature?
             Need details about our Business plan? Let us know.

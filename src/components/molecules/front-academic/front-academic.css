@@ -91,8 +91,7 @@
     font-weight: 100;
     letter-spacing: -0.25px;
     line-height: 1.25;
-    font-size: 1rem;
-    word-break: break-all;
+    word-break: break-word;
     word-wrap: pre-wrap;
     color: #fff;
     -webkit-animation-name: p-show;

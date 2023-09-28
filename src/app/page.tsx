@@ -32,6 +32,7 @@ function MainContent() {
   return (
     <LayoutePage>
       <HeaderFront />
+      <br />
     </LayoutePage>
   );
 }

@@ -15,10 +15,11 @@ const ToggleThemeFront = () => {
   };
 
   return (
-    <div className="absolute top-[2.2rem] right-5">
+    <div className="top-[0.2rem] absolute md:top-[2.0rem] right-3">
       <div className="inline-flex bg-white border rounded-md">
         <div className="relative">
           <Button
+            className=""
             variant="ghost"
             onClick={() => setToggleActive((prev) => !prev)}>
             <BsSun className="fill-black rotate-0 scale-100 transition-all hover:text-slate-900 dark:-rotate-90 dark:scale-0 dark:text-slate-400 dark:hover:text-slate-100" />

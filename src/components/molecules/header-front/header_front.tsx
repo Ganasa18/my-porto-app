@@ -3,8 +3,8 @@ import { userData } from "@/assets/static";
 import Image from "next/image";
 import Me from "../../../assets/me.png";
 import ToggleThemeFront from "../../atoms/toggle-theme/toggle-theme";
-import Cta from "../call-to-action/cta";
-import HeaderSocial from "../header-social/header-social";
+import Cta from "./call-to-action/cta";
+import HeaderSocial from "./header-social/header-social";
 import "./header_front.css";
 
 const HeaderFront = () => {
@@ -14,8 +14,10 @@ const HeaderFront = () => {
         <ToggleThemeFront />
         <h5 className="font-medium text-sm text-white pb-4">Hello I`m</h5>
 
-        <div className="inline-block  md:text-5xl text-light-blue dark:text-white font-bold">
-          <p className="typing__text text-2xl">{userData.fullName}</p>
+        <div className="inline-block text-light-blue dark:text-white font-bold">
+          <p className="typing__text text-1xl sm:text-2xl">
+            {userData.fullName}
+          </p>
         </div>
         <h5 className="text-slate-300 font-bold py-5 text-sm">
           Fullstack Developer

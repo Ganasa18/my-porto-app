@@ -14,12 +14,12 @@ const FrontAcademic = () => {
             <div
               key={index}
               className="container__card__service center__service">
-              <div className="card__service hover:bg-slate-800 dark:hover:bg-dark-blue">
+              <div className="card__service hover:bg-slate-800 dark:hover:bg-dark-blue dark:hover:bg-opacity-60">
                 <h2>{item.education}</h2>
                 <hr />
                 <br />
                 <div className="card__year">{item.year}</div>
-                <p>{item.description}</p>
+                <p className="text-sm md:text-[1rem]">{item.description}</p>
               </div>
             </div>
           );
