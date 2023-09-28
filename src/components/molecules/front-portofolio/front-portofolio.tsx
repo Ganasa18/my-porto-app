@@ -80,7 +80,7 @@ const FrontPortofolio = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="h-auto bg-black bg-opacity-50 rounded-lg shadow-md px-8 py-10">
+              className="h-auto bg-black bg-opacity-50 rounded-lg shadow-md px-8 py-10 text-white">
               <div className="flex flex-col space-y-6">
                 <div className="w-full">
                   <div className="pb-6 hover:cursor-pointer group ">

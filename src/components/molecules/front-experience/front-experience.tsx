@@ -22,7 +22,7 @@ const FrontExperience = () => {
                   return (
                     <div
                       key={index}
-                      className="flex items-center md:gap-x-4 text-sm md:text-[0.8rem] lg:[2rem]">
+                      className="flex items-center md:gap-x-4 text-sm md:text-[0.8rem] lg:[2rem] text-white">
                       {matches ? null : (
                         <div>
                           <BsFillPatchCheckFill className="fill-white text-xl" />
