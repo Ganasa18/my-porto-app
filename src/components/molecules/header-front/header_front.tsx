@@ -1,6 +1,8 @@
 "use client";
 import { userData } from "@/assets/static";
+import { initGA, logPageView } from "@/hook/use-ga";
 import Image from "next/image";
+import { useEffect } from "react";
 import Me from "../../../assets/me.png";
 import ToggleThemeFront from "../../atoms/toggle-theme/toggle-theme";
 import Cta from "./call-to-action/cta";

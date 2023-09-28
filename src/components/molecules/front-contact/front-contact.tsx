@@ -23,7 +23,6 @@ const FrontContactMe = () => {
       subject: formData.subject,
       message: formData.message,
     };
-    console.log(formBody);
 
     try {
       const response = await fetch("/api/v1/contact", {

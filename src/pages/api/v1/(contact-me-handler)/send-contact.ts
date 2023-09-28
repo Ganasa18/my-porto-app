@@ -1,3 +1,4 @@
+import { sendResponse, sendResponseError } from "@/middleware/response-custom";
 import { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
@@ -25,9 +26,9 @@ async function handleSendContactMe(req: NextApiRequest, res: NextApiResponse) {
     // Send the email
     await transporter.sendMail(mailOptions);
 
-    res.status(200).json({ message: "Email sent successfully" });
+    sendResponse(res, 200, "Email sent successfully");
   } catch (error) {
-    res.status(500).json({ message: "Failed to send email" });
+    sendResponseError(res, 500, "Failed to send email");
   }
 }
 

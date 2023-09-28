@@ -5,7 +5,7 @@ import React from "react";
 
 const LoginPage = () => {
   return (
-    <section className="bg-dark-blue dark:bg-slate-950">
+    <main className="bg-dark-blue dark:bg-slate-950">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <Link
           href={"/"}
@@ -21,7 +21,7 @@ const LoginPage = () => {
         </Link>
         <LoginAdmin />
       </div>
-    </section>
+    </main>
   );
 };
 

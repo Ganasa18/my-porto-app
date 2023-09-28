@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import { Inter } from "next/font/google";
 import Providers from "../store/provider/provider";
+import GoogleAnalytics from "@/hook/google-analytic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics GA_TRACKING_ID={process.env.GA_TRACKING_ID as string} />
       <body className={inter.className}>
         <NextTopLoader
           color="#2299DD"
@@ -33,6 +35,13 @@ export default function RootLayout({
         <Providers>
           <main>{children}</main>
         </Providers>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${
+              process.env.GA_TRACKING_ID as string
+            }" height="0" width="0" style="display: none; visibility: hidden;"></iframe>`,
+          }}
+        />
       </body>
     </html>
   );
