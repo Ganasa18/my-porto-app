@@ -50,6 +50,25 @@ export const listEducation = [
 
 export const listExperience = [
   {
+    position: "Apps Developer",
+    company: "PT.Markindo",
+    companyLink: "https://markindo.co.id",
+    time: "2019-2022",
+    address: "Kedoya Selatan, Kebun Jeruk",
+    work: "Worked on a team responsible for developing new features for PT.Markindo's, including improving and developing new tools for backoffice internal.",
+  },
+  {
+    position: "Web Developer",
+    company: "PT.Netzme",
+    companyLink: "https://netzme.id",
+    time: "2022-Current",
+    address: "Kuningan, Jakarta Selatan",
+    work: "Worked on a team responsible for developing new features for PT.Markindo's, including improving and developing new tools for backoffice internal.",
+  },
+];
+
+export const listSkills = [
+  {
     title: "Front End",
     data: [
       {
