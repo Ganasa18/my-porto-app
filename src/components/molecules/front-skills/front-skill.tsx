@@ -8,7 +8,7 @@ const FrontMySkill = () => {
   const matches = useMediaQuery("(max-width: 800px)");
   return (
     <section id="skill" className="mt-15">
-      <HeaderCompTitle title="What Skills I Have" subtitle="My Skill" />
+      <HeaderCompTitle title="What Skills I Have" subtitle="Skills" />
       <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 place-items-center gap-5 mt-20 px-4">
         {listSkills.map((item, index) => {
           return (

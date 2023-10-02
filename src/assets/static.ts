@@ -12,6 +12,7 @@ export const userData = {
   username: "yosua18",
   password: "P@455w0rd",
   fullName: "Yosua Liharja",
+  position: "Fullstack Developer",
   myInfo:
     "Saat ini saya bekerja sebagai Full Stack Developer di suatu perusahaan coding marking & packaging di Jakarta Barat. Berikut gambaran tentang saya,Saya menyukai tantangan dan hal-hal baru seperti mempelajari Docker,RPA , BOT WA maupun Bahasa Pemrograman yang sedang trending",
   linkCV: "https://google.com",

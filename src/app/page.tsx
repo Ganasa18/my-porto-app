@@ -2,7 +2,7 @@
 import { ActionPayloadGlobal, ActionTypes } from "@/interface/interface-store";
 import { useStore } from "@/store/use-store/use-store";
 import { useEffect } from "react";
-import HeaderFront from "../components/molecules/header-front/header_front";
+import HeaderFront from "../components/molecules/header-front/header-front";
 import LayoutePage from "./layout-page";
 import { actionGetAllProject } from "@/store/action/portofolio-action";
 import LoadingScreen from "@/components/molecules/loading-front/loading-front";

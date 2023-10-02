@@ -7,7 +7,7 @@ import Me from "../../../assets/me.png";
 import ToggleThemeFront from "../../atoms/toggle-theme/toggle-theme";
 import Cta from "./call-to-action/cta";
 import HeaderSocial from "./header-social/header-social";
-import "./header_front.css";
+import "./header-front.css";
 
 const HeaderFront = () => {
   return (

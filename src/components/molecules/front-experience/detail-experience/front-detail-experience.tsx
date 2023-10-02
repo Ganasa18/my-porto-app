@@ -15,7 +15,7 @@ interface DetailsExperienceProps {
 const PageExperienceView = () => {
   return (
     <div className="h-4/5 p-5">
-      <ul className="grid grid-flow-col gap-x-6 justify-start overflow-x-scroll">
+      <ul className="grid grid-flow-col gap-x-6 justify-start overflow-x-scroll ">
         {listExperience.map((item, index) => (
           <DetailsExperience
             key={index}
@@ -41,7 +41,7 @@ const DetailsExperience: React.FC<DetailsExperienceProps> = ({
   work,
 }) => {
   return (
-    <li className="my-8 w-[250px] sm:w-[280px] md:w-[500px] mx-auto flex flex-col items-center justify-between bg-slate-900 dark:bg-slate-700 px-5 py-6 rounded-md">
+    <li className="my-8 w-[350px] md:w-[500px] mx-auto flex flex-col items-center justify-between bg-slate-900 dark:bg-slate-700 px-5 py-6 rounded-md animate-slide-card">
       <div className="overflow-x-auto">
         <h3 className="capitalize font-bold text-2xl">
           {position}&nbsp;

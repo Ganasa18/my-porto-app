@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/atoms/toast-comp/toast-comp";
 import LoginAdmin from "@/components/molecules/admin/login-admin/login-admin";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,6 +22,7 @@ const LoginPage = () => {
         </Link>
         <LoginAdmin />
       </div>
+      <Toaster position="bottom-right" />
     </main>
   );
 };

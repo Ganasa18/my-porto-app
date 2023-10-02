@@ -6,7 +6,7 @@ import { listEducation } from "@/assets/static";
 const FrontAcademic = () => {
   return (
     <section id="services" className="mt-20">
-      <HeaderCompTitle title="What i Study" subtitle="Education" />
+      <HeaderCompTitle title="What I Study" subtitle="Education" />
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-y-5 services__container">
         {/* CARD */}
         {listEducation.map((item, index) => {

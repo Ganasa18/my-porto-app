@@ -4,7 +4,7 @@ import PageExperienceView from "./detail-experience/front-detail-experience";
 const FrontExperience = () => {
   return (
     <section id="experience" className="mt-20">
-      <HeaderCompTitle title="What My Experience" subtitle="My Experience" />
+      <HeaderCompTitle title="My Career Journey" subtitle="Experience" />
       <PageExperienceView />
       <br />
       <br />

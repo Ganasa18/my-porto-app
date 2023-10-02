@@ -22,6 +22,18 @@ const config: Config = {
         circularLight:
           "repeating-radial-gradient(rgba(0,0,0,0.4) 2px, #3b4d6b 5px, #1e293b 100px)",
       },
+      keyframes: {
+        slide: {
+          "0%": { transform: "translateX(0)" },
+          "3%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(-100%)" },
+          "90%": { transform: "translateX(5%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        "slide-card": "slide 3s 1s ease-in-out",
+      },
       colors: { ...colors, "dark-blue": "#2a4878", "light-blue": "#4db5ff" },
     },
   },

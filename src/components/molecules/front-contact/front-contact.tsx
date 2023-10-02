@@ -1,6 +1,7 @@
 "use client";
 import Button from "@/components/atoms/button/button";
 import HeaderCompTitle from "@/components/atoms/header-title-comp/header-title-comp";
+import { toast } from "@/components/atoms/toast-comp/toast-comp";
 import { useDebounce } from "@/hook/use-debounce";
 import useForm from "@/hook/use-form";
 import { formDataContactMe } from "@/interface/interface-form";
@@ -34,15 +35,28 @@ const FrontContactMe = () => {
       });
 
       if (response.ok) {
-        alert("Email sent successfully");
+        toast({
+          title: "Success",
+          message: "Email sent successfully",
+          type: "success",
+        });
         setTimeout(() => {
           setFormData("reset");
-          console.log(formData);
+          // console.log(formData);
         }, 500);
       } else {
-        alert("Failed to send email");
+        toast({
+          title: "Error",
+          message: "Failed to send email",
+          type: "error",
+        });
       }
     } catch (error) {
+      toast({
+        title: "Error",
+        message: "Something went wrong",
+        type: "error",
+      });
       console.error("Error:", error);
     }
   };

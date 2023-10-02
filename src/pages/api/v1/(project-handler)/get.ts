@@ -14,6 +14,10 @@ export default async function handleGet(
 ) {
   try {
     try {
+      const page = parseInt(req.query.page as string, 10) || 1;
+      const limit = parseInt(req.query.size as string, 10) || 10;
+      const offset: number = (page - 1) * limit;
+
       const projects = await prisma.project.findMany({
         where: { is_show: true },
       });
